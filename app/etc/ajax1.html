@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function mySend(){
+    var xhr = new XMLHttpRequest
+    xhr.onreadystatechange = function(){
+            console.log('1경로명:' +__dirname);
+        console.log("readyState: "+ xhr.readyState);
+        console.log("Status: "+ xhr.Status);
+        console.log("XMLHttpRequest.DONE: "+ XMLHttpRequest.DONE);
+
+        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
+            var responseData = xhr.responseText;
+            document.getElementById("result").innerHTML = responseData;
+            console.log("response Data:" + responseData);
+        }
+    }
+    console.log('2경로명:' +__dirname);
+    xhr.open("GET", __dirname + "./exam/11.txt", true);
+    console.log('3경로명:' +__dirname);
+    xhr.send(끝);
+    
+
+}
+    
+</script>
+<body>
+    일반 텍스트 파일 실습입니다.<br>
+    <button type="button" onclick="mySend()" >파일수신</button>
+    <div id="result"></div>
+  </body>
+</body>
+</html>
