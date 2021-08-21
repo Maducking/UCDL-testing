@@ -1,11 +1,5 @@
 "use strict";
 
-// 1 모듈화 module.exports 내보내기
-// 2 디렉토리 구조(MVC설계)
-// 3 라우팅(USE 이해)
-// 4 컨트롤러 분리
-
-
 // 모듈
 const express = require('express');
 const app = express();
