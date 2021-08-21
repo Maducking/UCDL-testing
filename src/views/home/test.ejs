@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/test.css">
+    <title>Speeding Test Page</title>
+    <script src="/js/counter.js"></script>
+</head>
+
+<body class="text-center">
+    <!-- <header> -->
+
+    <div class="wrapper">
+        <div class="bigName">
+            <h3>정보</h3>
+        </div>
+        <div class="infoLeft">
+            이미지
+        </div>
+        <div class="infoRight">
+            <h5>이   름:</h5>
+            <h5>생년월일:</h5>
+            <h5>번   호:</h5>
+            <h5>종   목:</h5>
+        </div>
+        <div class="infoRunning">
+            <button id="start_stop_Btn" onclick=cntStart(this.value) value="stop">시작</button>
+            진행시간: <span id=cnt_min>05:00</span>
+
+        </div>
+        <div class="infoNotice">
+            <h5>시작시 멈출 수 없습니다.</h5>
+        </div>
+
+        <div class="viewBox">
+            <textarea class="form-control" name="" id="view_Box" cols="30" rows="10" placeholder="Read only"
+                readonly></textarea>
+            <label for="viewBox"></label>
+        </div>
+
+        <div class="chButton">
+            <button>↔</button>
+        </div>
+
+        <div class="inputBox">
+            <textarea class="form-control" name="" id="input_Box" cols="30" rows="10" placeholder="Input only"
+                readonly></textarea>
+            <label for="inputBox"></label>
+        </div>
+        <div class="testSend">
+            <button id>전송</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
