@@ -4,14 +4,15 @@
 const express = require('express');
 const app = express();
 
+//engine
 app.set('views', './src/views');          //화면 view를 관리하는 폴더
-app.set('view engine', 'ejs');      // ejs engine 세팅
+app.set('view engine', 'ejs');            // ejs engine 세팅
 
-//home router 세팅
-const home = require("./src/routes/home");
+
 //미들웨어 등록(use)
-app.use("/", home);     
-//"/"루트경로로 들어오면 변수 "home"의 경로로 자동으로 들어간다.
+const home = require("./src/routes/home");      //home router 세팅
+app.use("/", home);                             // "/"루트경로로 들어오면 변수 "home"의 경로로 자동으로 들어간다.
+
 app.use(express.static(__dirname + '/src/public'));
 // app.use(express.static(__dirname + '/src/js/home'));
 

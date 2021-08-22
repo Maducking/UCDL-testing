@@ -9,7 +9,12 @@ const login = (req, res) =>{
     res.render("home/login");
 }
 
+const test = (req, res) =>{
+    res.render("home/test");
+}
+
 module.exports={
     root,
-    login
+    login,
+    test
 };

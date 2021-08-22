@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Root Page</h3>
+    <h3>테스트 페이지 입니다.</h3>
+    <h3>이동 합니다 아래 버튼을 눌러주세요</h3>
+    <div>
+        <button id="toTestpage">이동</button>        
+        <script>
+            var ToBtn = document.getElementById("toTestpage");
+            ToBtn.addEventListener('click', ()=>{
+                location.href="http://localhost:3000/login"
+            } );
+        </script>
+        <a href="http://localhost:3000/login">이동</a>
+    </div>    
 </body>
 </html>
