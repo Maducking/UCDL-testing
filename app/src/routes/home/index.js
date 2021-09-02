@@ -1,5 +1,5 @@
 "use strict";
-
+// 라우팅 페이지
 // 모듈
 const express = require("express");
 const router = express.Router();
