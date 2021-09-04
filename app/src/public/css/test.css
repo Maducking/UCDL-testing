@@ -9,21 +9,23 @@ body {
 } */
 .wrapper{
   display: grid;
-  grid-template-columns: 620px 50px 620px;
+  /* grid-template-columns: 620px 50px 620px; */
+  grid-template-columns: 100px 720px 30px 820px;
   /* grid-template-rows: repeat(3, 1fr); */
   /* width: 1300px; */
-  justify-content: center;
-  background-color: gray;
+  /* /* align-items: center; 수직 가운데 정렬 */
+  justify-content: center; /*수평 가운데 정렬 */
+  /* background-color: #f5f5f5;; */
   border: 2px solid blue;
   grid-gap: 5px;
 }
 
 .wrapper div{
-  background-color: #f5f5f5;;
+  background-color: #f5f5f5;
 }
 
 .bigName{
-  grid-column: 1 / span 3;
+  grid-column: 1 / 5; 
   text-align: center;
   }
 
@@ -43,6 +45,13 @@ body {
   grid-column-end: 4; */
 }
 
+/* 안내문 */
+.infoNotice{
+  grid-column: 4 / span 1;
+/* grid-column-start: 4;
+  grid-column-end: 5; */
+}
+
 /* 진행 */
 .infoRunning{
   grid-column: 1 / span 3;
@@ -50,27 +59,49 @@ body {
   grid-column-end: 4; */
 }
 
-/* 안내문 */
-.infoNotice{
-  grid-column: 1 / span 3;
-/* grid-column-start: 4;
-  grid-column-end: 5; */
+/* 폰트세팅 */
+.fontSetting{
+  grid-column: 4 / span 1;
 }
 
-/* .viewBox{
-  grid-column-start: 1;
-  grid-column-end: 7;
-} */
+.leftFrame{
+  grid-column: 1 / span 2;
+  
+  /* place-self:center; */
+
+}
 
 /* 교체버튼 */
-.chButton{
-  /* vertical-align: middle; */
+.swapframe{
+  grid-column: 3 / span 1;
   place-self:center;
 
   /* border: 3px solid blue; */
   /* align-items : center; */
 }
 
+.rightFrame{
+  grid-column : 4 / span 1;
+  /* justify-items : center; */
+  /* place-self:center; */
+
+}
+
+.leftFrame, .rightFrame{
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
+}
+
+
+/* #view_Box, #input_Box{
+  place-self: center;
+
+} */
+
+
+.h5_style{
+  margin: 10px;
+}
 /* .inputBox{
   grid-column-start: 7;
   grid-column-end: 13;
@@ -78,16 +109,19 @@ body {
 
 /* 전송버튼 */
 .testSend{
-  grid-column: 1 / span 3;
-  justify-items:  center;
+  grid-column: 1 / span 4;
+  /* justify-items:  center; */
 /* grid-column-start: 7;
   grid-column-end: 13; */
 }
 
 
 textarea{
-  height: 842px;
-  width : 595px;
+  /* a4 실제크기  21cm* 29.7cm*/
+
+  width : 21cm; 
+  height: 20cm;
+  
 }
 
 

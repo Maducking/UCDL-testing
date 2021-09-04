@@ -1,3 +1,4 @@
+'use strict';
 // import {reqExam} from './req_exam.js';
 function cntStart(flagValue) {
     var flag = flagValue;
@@ -6,7 +7,7 @@ function cntStart(flagValue) {
         flag = "run";
         var chk_start = confirm("시작 하시겠습니까?");
 
-        //테스트문제요청
+        //테스트문제 요청
         var xhr = new XMLHttpRequest;
         xhr.onreadystatechange = function(){
             console.log("xhr.status :" + xhr.status);
@@ -25,7 +26,7 @@ function cntStart(flagValue) {
 
         // https://sawol-today.tistory.com/396
         const MAX_MIN = 1;      //분 설정
-        const MAX_SEC = 30;     //초 설정(60초)
+        const MAX_SEC = 2;     //초 설정(60초)
         var timer = MAX_MIN * MAX_SEC;  //300초
         var start_stop_Btn = document.getElementById('start_stop_Btn');
         var input_box = document.getElementById('input_Box');
@@ -52,3 +53,68 @@ function cntStart(flagValue) {
         return 0;
     }
 }
+
+function five_cnt(){
+    setInterval(() => {
+        let five = 5;
+
+        alert("`five`초 후에 시작합니다.")
+        
+    }, 1000);
+}
+
+
+
+        // 교체버튼
+function swap_box(flag){
+    const swapBtn = document.getElementById('swapBtn');
+    const left = document.getElementById('left_frame');
+    const right = document.getElementById('right_frame');
+
+    const view= document.getElementById('view_Box');
+    const input = document.getElementById('input_Box');
+
+    //복제 하고 삭제한다
+    var view_tmp = view.cloneNode();
+    view.remove();
+    var input_tmp = input.cloneNode();
+    input.remove();
+
+    //복제한것을 붙여넣기
+    if(flag==="1"){
+        left.appendChild(input_tmp);
+        right.appendChild(view_tmp);
+        swapBtn.setAttribute('value', '2')
+        
+    }else{
+        left.appendChild(view_tmp);
+        right.appendChild(input_tmp);
+        swapBtn.setAttribute('value', '1')
+    }
+}
+
+        //글자세팅
+const plus = document.getElementById('font_size_plus');
+const reset = document.getElementById('font_size_reset');
+const minus= document.getElementById('font_size_minus');
+const bold = document.getElementById('font_bold');
+
+plus.addEventListener('click', ()=>{
+    // document.getElementById('view_Box').style.fontSize = '1.125em'; //14pt
+    document.getElementById('view_Box').style.fontSize = '10pt';
+});
+
+reset.addEventListener('click', ()=>{
+    document.getElementById('view_Box').style.fontSize = '11pt';
+});
+
+minus.addEventListener('click', ()=>{
+    document.getElementById('view_Box').style.fontSize = '12pt';
+});
+
+bold.addEventListener('click', ()=>{
+    document.getElementById('view_Box').style.fontWeight = 'bold';
+});
+
+
+

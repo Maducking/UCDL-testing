@@ -30,8 +30,8 @@
                 <label for="InputName">이름</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="InputTel" name="telNum" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="-없이 입력해주세요">
-                <label for="InputTel">번호</label>
+                <input type="text" class="form-control" id="InputTel" name="telNum" pattern="[0-1]{3}[0-9]{4}[0-9]{4}" title="예)01012341234 형식으로 입력해주세요!" placeholder="- 없이 입력해주세요" >
+                <label for="InputTel">휴대폰번호 ("-" 없이 입력해주세요)</label>
                 
             </div>
             <div class="form-floating">
@@ -42,12 +42,12 @@
               <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div> -->
-            <div class="checkbox mb-3">
+            <!-- <div class="checkbox mb-3">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
-            </div>
-            <input class="w-100 btn btn-lg btn-primary" type="submit">로그인
+            </div> -->
+            <input class="w-100 btn btn-lg btn-primary" type="submit" value= "로그인">
             
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>

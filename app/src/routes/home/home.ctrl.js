@@ -25,7 +25,7 @@ const test = (req, res) => {
       console.log("관리자에게 문의 바랍니다." + err);
     }
     if (!rows[0]) {           //undefined는 거짓?????
-      res.send('<script type="text/javascript">alert("잘못입력하셨습니다.");</script>');
+      res.send('<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다.."); document.location.href=\'/login\';</script>');
       console.log("No matching user");
     } else {
       res.render("home/test", { user: rows });
