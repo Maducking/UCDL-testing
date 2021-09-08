@@ -1,8 +1,10 @@
 "use strict";
 
 // 모듈
-const express = require('express');
 const app = express();
+const express = require('express');
+const home = require("./src/routes/home");      //home router 세팅
+
 // const bodyParser =require('body-parser');
 
 //engine
@@ -14,9 +16,7 @@ app.set('view engine', 'ejs');            // ejs engine 세팅
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const home = require("./src/routes/home");      //home router 세팅
 app.use("/", home);                             // "/"루트경로로 들어오면 변수 "home"의 경로로 자동으로 들어간다.
-
 app.use(express.static(__dirname + '/src/public'));
 // app.use(express.static(__dirname + '/src/js/home'));
 
