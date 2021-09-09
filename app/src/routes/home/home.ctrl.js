@@ -1,5 +1,5 @@
 "use strict";
-const { json } = require("express");
+// const { json } = require("express");
 const db_user_conn = require("../../../bin/config/db_conn");
 // 컨트롤러 부분 모듈화
 const root = (req, res) => {

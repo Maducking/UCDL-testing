@@ -6,8 +6,8 @@
 // const PORT = 3000;
 
 //heroku setting
-const app = require("../main");
-const PORT = process.env.PORT || 8080;
+const app = require("../../main");
+const PORT = process.env.PORT || 8080;  //process.env.PORT 있으면 실행 없으면 8080
 
 app.listen(PORT, ()=>{
     console.log('UCDL 서버가동!');
