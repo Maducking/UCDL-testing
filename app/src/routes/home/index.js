@@ -7,12 +7,15 @@ const ctrl = require("./home.ctrl");
 
 // 변수 home의 경로를 따라 최초로 login.ejs를 읽는다.
 
-// 컨트롤러 분리(MVC설계)
+// 라우팅 컨트롤러 분리(MVC설계)
 // router.get('/', ctrl.root);
 router.get('/', ctrl.root);
 router.get('/login', ctrl.login);
 
+// router.post('/test', ctrl.test); 
+
 router.post('/test', ctrl.test); 
+
 
 router.get('/pbt', (req, res) => {
     res.sendFile( __dirname + '/exam/11.txt');

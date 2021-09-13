@@ -17,7 +17,9 @@ function cntStart(flagValue) {
                 // console.log("response Data:" + responseData);
                 }
             }
-        xhr.open('GET', "http://localhost:3000/pbt", true);        
+            
+        // xhr.open('GET', "http://localhost:3000/pbt", true);        
+        xhr.open('GET', "https://test-korkb.herokuapp.com/pbt", true);        
         xhr.send();
 
         var start_stop_Btn = document.getElementById('start_stop_Btn').innerText = "시작중";
@@ -26,7 +28,7 @@ function cntStart(flagValue) {
 
         // https://sawol-today.tistory.com/396
         const MAX_MIN = 1;      //분 설정
-        const MAX_SEC = 2;     //초 설정(60초)
+        const MAX_SEC = 60;     //초 설정(60초)
         var timer = MAX_MIN * MAX_SEC;  //300초
         var start_stop_Btn = document.getElementById('start_stop_Btn');
         var input_box = document.getElementById('input_Box');
