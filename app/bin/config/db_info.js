@@ -10,8 +10,8 @@ const db_info = {
   // password: "000000",
   // database: "ucdl_test"
 
-  host: "15.164.129.144",
-  port: "59950",
+  host: "54.180.157.45",
+  port: "56091",
   user: "root",
   password: "000000",
   database: "testkb"
