@@ -8,9 +8,22 @@
 </head>
 <body>
     <h3>테스트 페이지 입니다.</h3>
+    <!-- 개발자용 서버 접속 -->
+    <form action="/login" method="GET">
+    <h3>DB ip: <input type="text" name="dbIp"></h3>
+    <h3>DB port: <input type="text"name="dbPort"></h3>
+
+    <h3>이동 합니다 아래 버튼을 눌러주세요</h3>
+    <div>
+        <!-- <button id="toTestpage">이동</button>         -->
+    <input type="submit" value="이동">
+    </form>
+    
+    <!-- 
     <h3>이동 합니다 아래 버튼을 눌러주세요</h3>
     <div>
         <button id="toTestpage">이동</button>        
+
         <script>
             
             var ToBtn = document.getElementById("toTestpage");
@@ -18,7 +31,7 @@
                 location.href="/login";
                 
             } );
-        </script>
+        </script> -->
         <!-- <a href="http://localhost:3000/login">이동</a> -->
     </div>    
 </body>

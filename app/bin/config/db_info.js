@@ -1,7 +1,10 @@
 'use strict';
 
 //db(mysql)가 있을때
-const mysql = require("mysql");
+// const mysql = require("mysql");
+// const _url = require("../../src/routes/home/home.ctrl");
+
+// console.log("DB URL:" + _url.root);
 
 const db_info = {
   // host: "localhost",
@@ -9,41 +12,12 @@ const db_info = {
   // user: "root",
   // password: "000000",
   // database: "ucdl_test"
-
-  host: "54.180.157.45",
-  port: "56091",
-  user: "root",
-  password: "000000",
-  database: "testkb"
-
-
+  host : "",
+  port : "",
+  user : "root",
+  password : "000000",
+  database : "testkb"
 };
 
-module.exports = {
-  db_init: function () {
-    return mysql.createConnection(db_info);
-  },
-
-  db_connect: function (conn) {
-    conn.connect((err) => {
-      if (err) {
-        console.log("DB connection error : " + err);
-      } else {
-        console.log("Database connection succesfull.");
-      }
-    });
-
-    conn.end();
-  },
-};
-
-// db서버가 없을때
-// const users = {
-//   name: ["조영걸", "유영수"],
-//   birth: ["1978-06-29", "1949-07-27"],
-//   hp: ["01047483791", "01022033505"]
-// };
-
-// module.exports = {
-//   users
-// };
+// 객체로 내보냈을때 받는곳의 변수가  곧 객체이다
+module.exports = db_info;
