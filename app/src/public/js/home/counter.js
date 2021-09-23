@@ -119,6 +119,7 @@ const bold = document.getElementById('font_bold');
 plus.addEventListener('click', ()=>{
     // document.getElementById('view_Box').style.fontSize = '1.125em'; //14pt
     document.getElementById('view_Box').style.fontSize = '10pt';
+    document.getElementById('input_Box').style.fontSize = '10pt';
 });
 
 // reset.addEventListener('click', ()=>{
@@ -127,6 +128,7 @@ plus.addEventListener('click', ()=>{
 
 minus.addEventListener('click', ()=>{
     document.getElementById('view_Box').style.fontSize = '12pt';
+    document.getElementById('input_Box').style.fontSize = '12pt';
 });
 
 bold.addEventListener('click', ()=>{
