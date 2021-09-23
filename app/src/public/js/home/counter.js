@@ -38,7 +38,7 @@ function cntStart(flag) {
 
         // https://sawol-today.tistory.com/396
         const MAX_MIN = 1;      //분 설정
-        const MAX_SEC = 5;     //초 설정(60초)
+        const MAX_SEC = 15;     //초 설정(60초)
         let timer = MAX_MIN * MAX_SEC;  //300초
         // var running_btn = document.getElementById('running_btn');
         const input_box = document.getElementById('input_Box');
