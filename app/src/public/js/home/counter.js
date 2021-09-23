@@ -132,14 +132,17 @@ minus.addEventListener('click', ()=>{
 bold.addEventListener('click', ()=>{
     const bold_btn=document.getElementById('font_bold');
     const view_Box=document.getElementById('view_Box');
+    const input_Box=document.getElementById('input_Box');
     let flag = bold_btn.value;
     if(flag === 'unbold'){
         bold_btn.setAttribute('value', 'bold');
         view_Box.style.fontWeight = 'bold';
+        input_Box.style.fontWeight = 'bold';
         
     }else{
         bold_btn.setAttribute('value', 'unbold');
         view_Box.style.fontWeight = '';
+        input_Box.style.fontWeight = 'bold';
     }
 
 
