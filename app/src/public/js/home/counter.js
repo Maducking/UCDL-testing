@@ -1,46 +1,60 @@
 'use strict';
 // import {reqExam} from './req_exam.js';
-function cntStart(flagValue) {
-    var flag = flagValue;
+function cntStart(flag) {
+    let flag_status = flag;
+    const processing_btn = document.getElementById('process_btn');
+    const send_btn = document.getElementById('send_answer');
+    
     // const pbtQuiz = "http://localhost:3000/pbt";
-    if (flag == "stop") {   // 테스트 시작
-        flag = "run";
-        var chk_start = confirm("시작 하시겠습니까?");
-
+    if (flag_status === "ready") {   // 테스트 시작
+        console.log("플래그 값: "+ flag);
+        flag_status = "running";
+        
+        // var chk_start = confirm("시작 하시겠습니까?");
+        confirm("시작 하시겠습니까?");
+        // five_cnt();
         //테스트문제 요청
-        var xhr = new XMLHttpRequest;
+        let xhr = new XMLHttpRequest;
         xhr.onreadystatechange = function(){
             console.log("xhr.status :" + xhr.status);
             if(xhr.readyState === 4 && xhr.status === 200){
                 var responseData = xhr.responseText;
                 document.getElementById("view_Box").value = responseData;
-                // console.log("response Data:" + responseData);
                 }
             }
             
-        // xhr.open('GET', "http://localhost:3000/pbt", true);        
+        // xhr.open('GET', "http://localhost:8080/pbt", true);
+        //로컬 시험문제        
         xhr.open('GET', "https://test-korkb.herokuapp.com/pbt", true);        
         xhr.send();
 
-        var start_stop_Btn = document.getElementById('start_stop_Btn').innerText = "시작중";
-        var start_stop_Btn = document.getElementById('start_stop_Btn').defaultValue = flag;
+        processing_btn.innerText = "진행";
+        // processing_btn.value = 'running';
+        processing_btn.setAttribute('value', flag_status);
+        processing_btn.setAttribute('disabled', true);
+        console.log("이후 플래그: " + processing_btn.value);
+
         // console.log(flag);
 
         // https://sawol-today.tistory.com/396
         const MAX_MIN = 1;      //분 설정
-        const MAX_SEC = 60;     //초 설정(60초)
-        var timer = MAX_MIN * MAX_SEC;  //300초
-        var start_stop_Btn = document.getElementById('start_stop_Btn');
-        var input_box = document.getElementById('input_Box');
+        const MAX_SEC = 5;     //초 설정(60초)
+        let timer = MAX_MIN * MAX_SEC;  //300초
+        // var running_btn = document.getElementById('running_btn');
+        const input_box = document.getElementById('input_Box');
         input_box.readOnly = false;
         
 
-        setInterval(() => {
-            if (timer <= 0){    //테스트 끝났을때
+        let time_cnt = setInterval(() => {
+            if (timer <= 1){    //테스트 끝났을때
                 
-                start_stop_Btn.innerText = "종료";
+                processing_btn.innerText = "종료";
+                processing_btn.setAttribute('disabled', true);
+                send_btn.removeAttribute('disabled');
                 input_box.readOnly = true;
-                return 0;
+                console.log('여기' + timer);
+                clearInterval(time_cnt);
+                // return 0;
             }
             //테스트 진행중
             --timer;
@@ -50,8 +64,9 @@ function cntStart(flagValue) {
             document.getElementById("cnt_min").innerHTML = _min + "분 " + _sec + "초";
             console.log(timer);
         }, 1000);
+        // time_cnt()
 
-    }else if (flag == "run"){
+    }else if (flag === "running"){
         return 0;
     }
 }
@@ -106,16 +121,28 @@ plus.addEventListener('click', ()=>{
     document.getElementById('view_Box').style.fontSize = '10pt';
 });
 
-reset.addEventListener('click', ()=>{
-    document.getElementById('view_Box').style.fontSize = '11pt';
-});
+// reset.addEventListener('click', ()=>{
+//     document.getElementById('view_Box').style.fontSize = '11pt';
+// });
 
 minus.addEventListener('click', ()=>{
     document.getElementById('view_Box').style.fontSize = '12pt';
 });
 
 bold.addEventListener('click', ()=>{
-    document.getElementById('view_Box').style.fontWeight = 'bold';
+    const bold_btn=document.getElementById('font_bold');
+    const view_Box=document.getElementById('view_Box');
+    let flag = bold_btn.value;
+    if(flag === 'unbold'){
+        bold_btn.setAttribute('value', 'bold');
+        view_Box.style.fontWeight = 'bold';
+        
+    }else{
+        bold_btn.setAttribute('value', 'unbold');
+        view_Box.style.fontWeight = '';
+    }
+
+
 });
 
 

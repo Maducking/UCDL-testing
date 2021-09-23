@@ -13,6 +13,7 @@
 <body class="text-center">
     <!-- <header> -->
 
+        <!-- div로 item이 나누어짐 -->
     <div class="wrapper">
         <div class="bigName">
             <h3>정보</h3>
@@ -28,26 +29,32 @@
             <h5 class="h5_style">응시종목 : <%=applicant[0].subject_mbr%></h5>
         </div>
 
-        <div class="infoNotice">
+        <!-- <div class="infoNotice">
             <h5>Notice</h5>
-        </div>
-
-        <div class="infoRunning">
-            <button id="start_stop_Btn" onclick=cntStart(this.value) value="stop">시작</button>
+        </div> -->
+        <!-- <div class="infoRunning">
+            <button id="process_btn" onclick=cntStart(this.value) value="ready">시작</button>
             진행시간: <span id=cnt_min>05:00</span>
 
-            <!-- <div class="infoNotice">
+            <div class="infoNotice">
                 <h5>시작시 멈출 수 없습니다.</h5>
-            </div> -->
+            </div>
             <h8>시작시 멈출 수 없습니다.</h8>
-            
-        </div>
+        </div> -->
+        <!-- <div class="testSend">
+            <button>전송</button>
+        </div> -->
         <div class="fontSetting" id=font_style>
             <span><h8>글자크기:</h8></span>
             <button id="font_size_plus">10pt</button>
-            <button id="font_size_reset">11pt</button>
+            <!-- <button id="font_size_reset">11pt</button> -->
             <button id="font_size_minus">12pt</button>
-            <button id="font_bold">진하게</button>
+            <button id="font_bold" value="unbold">진하게</button>
+        <div>
+            <button id="process_btn" onclick=cntStart(this.value) value="ready">시작</button>
+            진행시간: <span id=cnt_min>05:00</span>
+        </div>
+            <button id="send_answer" disabled>전송</button><span> 시작시 멈출 수 없습니다.</span>
         </div>
         
 
@@ -69,9 +76,7 @@
         </div>
 
 
-        <div class="testSend">
-            <button>전송</button>
-        </div>
+        
 
     </div>
 
